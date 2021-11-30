@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+<html>
+		<head>
+			<title>Rapport du projet Hitori</title>
+			<meta http-equiv="Content-Type" content="text/html"; charset=UTF-8 />
+			<link rel="stylesheet" type="text/css" href="CSS.css">
+		</head>
+		<body>
+			<div id = "intro"><img src="UPEM logo.png"><div id = "texte">Projet pour l'UPEM :<br> Rapport : Hitori</div></div>
+			<div class = "partieB">Membres du projet:</div>
+			<div class = "boite"><img src="VONG.jpg"><div>VONG Stéphane</div></div> <div class = "boite"><img src="Mehdi.jpg"><div>SAOUD Mehdi</div></div>
+			<div id = "sommaire">Sommaire:</div>
+			<ul class = "sommaire">
+				<li><a href="#PP">Présentation du projet</a></li>
+				<li><a href="#SGP">Structure générale du projet</a></li>
+				<li><a href="#PVR">Principales variables utilisé et leurs rôles</a></li>
+				<li><a href="#PFR">Principales fonctions et leurs rôles</a></li>
+				<li><a href="#OP">Organisation du projet</a></li>
+			</ul>
+			<div id = "corps">
+				<h1 id="PP">Présentation du projet</h1>
+				<h2><i>Le projet:</i></h2>
+				<p>Le jeu Hitori est un jeu d'origine japonaise qui se joue sur une grille de chiffre ou de lettre. Plus le nombre de colonne ou de ligne, voire les deux, augmente, plus la difficulté du jeu augmente.</p>
+				<h2><i>Comment y jouer:</i></h2>
+				<p>Le but du jeu est de noircir des cases de sorte qu'un chiffre ou qu'une lettre n'apparaisse que une seule fois sur une ligne et sur une colonne.Pour ce faire, on va cliquer sur une case pour noircir et ,s'il le faut, utiliser les options mises à disposition pour aider le joueur à terminer la grille.</p>
+				<h1 id="SGP">Structure générale du projet</h1>
+				<p>Notre programme est divisé en 5 parties: règles du jeu, moteur du jeu, "graphisme" du jeu, programme principale lançant le jeu et le solveur qui va déterminer quelles sont les configurations gagnantes. Nous avons décidé de nous répartir les tâches et de faire des mises au point à chaque fois que nous avancions dans le projet, n'hésitant pas à nous entraidez lorsque l'un d'entre nous avait des diffcultées</p>
+				<h1 id="PVR">Principales variables utilisé et leurs rôles</h1>
+				<ul>
+					<li><b>Jeu :</b> Gère si le jeu continu ou non</li>
+					<li><b>Etape :</b> Variable permettant de séparer le jeu en plusieurs étapes</li>
+					<li><b>Format :</b> Largeur, hauteur et repère de la grille sélectionnée</li>
+					<li><b>reset_grille :</b> Sauvegarde de la grille orginale</li>
+					<li><b>GRILLE :</b> Sauvegarde de la grille, permet de gérer la grille actuellement lancée</li>
+					<li><b>liste_noire :</b> Variable <i>set</i> comprenant les coordonnées des cases noires</li>
+					<li><b>sauvegarde :</b> Liste correspondant à la grille avec un coup(case noire) en moins</li>
+					<li><b>sauvegarde_noires :</b> Variable <i>set</i> contenant la variable <i>set</i> liste_noire cependant avec une valeur en moins(un coup en moins)</li>
+					<li><b>CGa :</b> Variable correspondant au coordonnée x du clic gauche</li>
+					<li><b>CGb :</b> Variables correspondant au coordonnée y du clic gauche</li>
+				</ul>
+				<h1 id="PFR">Principales fonctions et leurs rôles</h1>
+				<ul>
+					<li><b>lire_grille(nom_fichier) :</b> Permet de retourner une liste de liste représentant la grille.</li>
+					<li><b>sans_conflit(grille, noircies) :</b> Permet de vérifier la règle n°1 du jeu, la règle n°1 est qu'un élément ne doit pas se trouver 2 fois dans la même colonne ou dans la même ligne.</li>
+					<li><b>sans_voisines_noircies(grille, noircies) :</b> Permet de vérifier la règle n°2 du jeu, la règle n°2 est que pour compléter le jeu, la grille ne doit pas contenir 2 cases noires côte à côte.</li>
+					<li><b>connexe(grille, noircies) :</b> Permet de vérifier la règle n°3 du jeu, la règle n°3 est que l'ensemble des cases visibles ne doit faire qu'un (elle ne doit constituer qu'une seule zone et ne doit pas être divisé par des cases noires).</li>
+					<li><b>localisation_clic(CGa, CGb) :</b> Permet de localiser le clic gauche de la souris pour effectuer une action bien précise.</li>
+					<li><b>maj_grille(liste, taille_case, largeur, hauteur, repere) :</b> Permet d'actualiser, à chaque action effectué, la grille.</li>
+				</ul>
+				<h1 id="OP">Organisation du projet</h1>
+        <h3>VONG Stéphane</h3>
+        <ul>
+          <li>Codage de la tâche 1, de la tâche 3 et du programme principale</li>
+          <li>Rédaction du rapport en HTML et en CSS</li>
+        </ul>
+        <h3>SAOUD Mehdi</h3>
+        <ul>
+          <li>Codage de la tâche 2 et de la tâche 4</li>
+        </ul>
+        <h4>Fréquence des rencontres :</h4>
+        <p>A chaque fois qu'on se voyait en cours, on faisait un mise au point sur le projet.</p>
+        <h4>Apprentissages réalisés</h4>
+        <p>Le travail en groupe en autonomie, une meilleure compréhension du Python en générale.</p>
+        <h4>Dificultés rencontrées</h4>
+        <ul>
+          <li>Codage de la fonction lire_grille()</li>
+          <li>Compréhension et codage de la dernière partie de la tâche 4</li>
+          <li>Codage de la fonction connexe()</li>
+          <li>Programmation du design adaptatif</li>
+          <li>Copie d'une liste de liste sans pour autant qu'elle soit modifié si on modifie la liste de liste originelle</li>
+        </ul>
+			</div>
+		</body>
+</html>

@@ -1,0 +1,97 @@
+html{
+	font-family:sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+div#intro img{
+	float: left;
+	width: 220px;
+}
+
+#intro{
+	text-decoration: underline;
+}
+
+div#texte{
+	font-size: 40px;
+	font-weight: bold;
+	width: 100%;
+	padding-bottom: 40px;
+	padding-top: 50px;
+	padding-left: 40%;
+	background-color: white;
+}
+
+div.partieB{
+	background-color: #D4E7E2;
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #B4AD56;
+}
+
+div.boite img{
+	width: 120px;
+	position: relative;
+	border-style: ridge;
+	border-bottom-color: #7A928C;
+	border-right-color: #7A928C;
+}
+
+.boite{
+	display: block;
+	vertical-align: bottom;
+	padding: 10px;
+	text-align: center;
+	position: relative;
+	float: left;
+	background-color: #D4E7E2;
+	width: 50%;
+}
+
+#sommaire{
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: center;
+	background-color: white;
+	color: #B4AD56;
+}
+
+.sommaire{
+	margin: 0px;
+	text-align: left;
+	list-style-type: none;
+	padding-left: 0px;
+	background-color: white;
+}
+
+.sommaire li{
+	padding-left: 43%;
+}
+
+#corps{
+	background-color: #D4E7E2;
+}
+
+h1{
+	color: #E88318;
+}
+
+h2{
+	color: #106610;
+}
+
+h3{
+	color: #08047a;
+	text-decoration: underline;
+}
+
+h4{
+	color: #084e9c;
+}
