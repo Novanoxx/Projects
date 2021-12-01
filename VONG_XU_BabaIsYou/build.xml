@@ -1,0 +1,43 @@
+<project name="BabaIsYou" default="build" basedir=".">
+    <description>
+        Build file for BabaIsYou
+    </description>
+
+    <property name="src.dir" location="src"/>
+    <property name="build.dir" location="classes"/>
+    <property name="lib.dir" location="lib"/>
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+    </path>
+
+    <target name="init">
+        <tstamp/>
+        <mkdir dir="${build.dir}"/>
+        <manifest file="MANIFEST.MF">
+            <attribute name="Main-Class" value="fr.vong_xu.proj.main.Main"/>
+         </manifest>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac
+                srcdir="${src.dir}"
+                destdir="${build.dir}"
+                includeantruntime="false"
+        >
+            <classpath refid="classpath"/>
+            <compilerarg line="--enable-preview --release=15"/>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="baba.jar" basedir="${build.dir}" manifest="MANIFEST.MF">
+            <zipgroupfileset dir="${lib.dir}"/>
+        </jar>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="build" depends="jar, clean"/>
+</project>
