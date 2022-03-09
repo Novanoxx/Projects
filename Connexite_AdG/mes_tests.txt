@@ -1,0 +1,60 @@
+Doctest pour la fonction charger_donnees:
+
+>>> from graphe import *
+>>> from ameliorations import *
+>>> reseau = Graphe()
+>>> charger_donnees(reseau, "METRO_5.txt")
+>>> sorted(reseau.sommets())
+[1641, 1647, 1648, 1674, 1700, 1746, 1759, 1772, 1843, 1891, 1898, 1900, 1922, 1932, 1951, 1953, 1957, 2008, 2017, 2062, 2072, 2089]
+
+Doctest pour la fonction points_articulation:
+
+>>> from graphe import *
+>>> from ameliorations import *
+>>> G = Graphe()
+>>> G.ajouter_sommets(zip('abcde', [None] * 5))
+>>> G.ajouter_aretes(
+...     [('a', 'b', None), ('b', 'a', None), ('b', 'c', None), ('c', 'd', None), ('c', 'e', None), ('e', 'd', None)])
+>>> sorted(points_articulation(G))
+['b', 'c']
+
+Doctest pour la fonction ponts:
+
+>>> from graphe import *
+>>> from ameliorations import *
+>>> G = Graphe()
+>>> G.ajouter_sommets(zip('abcdefghijkl', [None] * 12))
+>>> G.ajouter_aretes(
+...     [('a', 'b', None), ('b', 'c', None), ('c', 'a', None), ('c', 'd', None), ('d', 'e', None),
+...      ('e', 'f', None), ('f', 'd', None), ('f', 'g', None), ('g', 'h', None), ('h', 'i', None),
+...      ('i', 'g', None), ('d', 'j', None), ('j', 'k', None), ('k', 'l', None), ('l', 'j', None)])
+>>> sorted(map(sorted, ponts(G)))
+[['c', 'd'], ['d', 'j'], ['f', 'g']]
+
+Doctest pour la fonction amelioration_ponts:
+
+>>> from graphe import *
+>>> from ameliorations import *
+>>> G = Graphe()
+>>> G.ajouter_sommets(zip('abcdefghijkl', [None] * 12))
+>>> G.ajouter_aretes(
+...     [('a', 'b', None), ('b', 'c', None), ('c', 'a', None), ('c', 'd', None), ('d', 'e', None),
+...      ('e', 'f', None), ('f', 'd', None), ('f', 'g', None), ('g', 'h', None), ('h', 'i', None),
+...      ('i', 'g', None), ('d', 'j', None), ('j', 'k', None), ('k', 'l', None), ('l', 'j', None)])
+>>> for u, v in amelioration_ponts(G):
+...     G.ajouter_arete(u, v, None)
+>>> len(ponts(G))
+0
+
+Doctest pour la fonction amelioration_points_articulation:
+
+>>> from graphe import *
+>>> from ameliorations import *
+>>> G = Graphe()
+>>> G.ajouter_sommets(zip('abcde', [None] * 5))
+>>> G.ajouter_aretes(
+...     [('a', 'b', None), ('b', 'a', None), ('b', 'c', None), ('c', 'd', None), ('c', 'e', None), ('e', 'd', None)])
+>>> for u, v in amelioration_points_articulation(G):
+...     G.ajouter_arete(u, v, None)
+>>> len(points_articulation(G))
+0
