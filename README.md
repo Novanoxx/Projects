@@ -1,3 +1,5 @@
+All these projects was made for a University project
+
 # Compilation
 It is a project made in Flex, Bison and C. This project required a pair.
 The goal was to create a C compiler that will check a C file, compile it and create a nasm file in the case
